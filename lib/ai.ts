@@ -14,7 +14,8 @@ export async function chatComplete(
 ): Promise<string> {
   const apiKey = process.env.OPENAI_API_KEY;
   if (!apiKey) throw new Error("OPENAI_API_KEY is not configured on the server.");
-  const res = await fetch(`${OPENAI_BASE_URL}/chat/completions`, {
+  const base = OPENAI_BASE_URL.replace(/\/+$/, "");
+  const res = await fetch(`${base}/chat/completions`, {
     method: "POST",
     headers: {
       Authorization: `Bearer ${apiKey}`,
