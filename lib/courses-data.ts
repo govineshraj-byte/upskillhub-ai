@@ -5,6 +5,8 @@ export type Course = {
   duration: string;
   rating: number;
   url: string;
+  /** All courses listed here are free to learn (no paywall for core content). */
+  free: boolean;
 };
 
 export type CareerField = {
@@ -20,6 +22,8 @@ export type CareerField = {
   certifications: string[];
 };
 
+const FREE = true;
+
 export const CAREER_FIELDS: CareerField[] = [
   {
     slug: "software-development",
@@ -30,9 +34,9 @@ export const CAREER_FIELDS: CareerField[] = [
     avgSalary: "$90k – $160k",
     skills: ["Data Structures", "Algorithms", "Git", "System Design", "Testing", "APIs"],
     courses: [
-      { title: "Meta Back-End Developer Professional", provider: "Coursera", level: "Beginner", duration: "8 months", rating: 4.8, url: "https://www.coursera.org/professional-certificates/meta-back-end-developer" },
-      { title: "The Complete JavaScript Course", provider: "Udemy", level: "Beginner", duration: "69h", rating: 4.7, url: "https://www.udemy.com/course/the-complete-javascript-course/" },
-      { title: "System Design Primer (free)", provider: "GitHub", level: "Intermediate", duration: "Self-paced", rating: 4.9, url: "https://github.com/donnemartin/system-design-primer" },
+      { title: "The Odin Project – Full Stack Path", provider: "The Odin Project", level: "Beginner", duration: "Self-paced", rating: 4.9, url: "https://www.theodinproject.com/", free: FREE },
+      { title: "Back End Development and APIs", provider: "freeCodeCamp", level: "Beginner", duration: "~300h", rating: 4.8, url: "https://www.freecodecamp.org/learn", free: FREE },
+      { title: "System Design Primer", provider: "GitHub (open source)", level: "Intermediate", duration: "Self-paced", rating: 4.9, url: "https://github.com/donnemartin/system-design-primer", free: FREE },
     ],
     projects: ["REST API with auth + tests", "Real-time chat app", "URL shortener with analytics"],
     certifications: ["Meta Back-End Developer", "AWS Certified Developer – Associate"],
@@ -46,9 +50,9 @@ export const CAREER_FIELDS: CareerField[] = [
     avgSalary: "$75k – $140k",
     skills: ["HTML/CSS", "JavaScript", "React/Next.js", "Node.js", "Tailwind", "Databases"],
     courses: [
-      { title: "The Web Developer Bootcamp", provider: "Udemy", level: "Beginner", duration: "74h", rating: 4.7, url: "https://www.udemy.com/course/the-web-developer-bootcamp/" },
-      { title: "Next.js App Router Fundamentals", provider: "Vercel Learn", level: "Intermediate", duration: "12h", rating: 4.8, url: "https://nextjs.org/learn" },
-      { title: "Full Stack Open", provider: "University of Helsinki", level: "Intermediate", duration: "Self-paced", rating: 4.9, url: "https://fullstackopen.com/en/" },
+      { title: "Full Stack Open", provider: "University of Helsinki", level: "Beginner", duration: "Self-paced", rating: 4.9, url: "https://fullstackopen.com/en/", free: FREE },
+      { title: "Responsive Web Design", provider: "freeCodeCamp", level: "Beginner", duration: "~300h", rating: 4.8, url: "https://www.freecodecamp.org/learn", free: FREE },
+      { title: "MDN Web Docs Tutorials", provider: "MDN (Mozilla)", level: "Beginner", duration: "Self-paced", rating: 4.9, url: "https://developer.mozilla.org/", free: FREE },
     ],
     projects: ["Portfolio + blog with CMS", "E-commerce store with payments", "SaaS dashboard with auth"],
     certifications: ["Meta Front-End Developer", "AWS Cloud Practitioner"],
@@ -62,9 +66,9 @@ export const CAREER_FIELDS: CareerField[] = [
     avgSalary: "$85k – $150k",
     skills: ["Python", "OOP", "APIs", "Pandas", "Django/Flask", "Testing"],
     courses: [
-      { title: "Python for Everybody", provider: "Coursera", level: "Beginner", duration: "8 months", rating: 4.8, url: "https://www.coursera.org/specializations/python" },
-      { title: "100 Days of Code: Python Bootcamp", provider: "Udemy", level: "Beginner", duration: "65h", rating: 4.7, url: "https://www.udemy.com/course/100-days-of-code/" },
-      { title: "Django for Everybody", provider: "Coursera", level: "Intermediate", duration: "4 months", rating: 4.7, url: "https://www.coursera.org/specializations/django" },
+      { title: "Python for Everybody", provider: "py4e.com (Dr. Chuck)", level: "Beginner", duration: "Self-paced", rating: 4.9, url: "https://www.py4e.com/", free: FREE },
+      { title: "Scientific Computing with Python", provider: "freeCodeCamp", level: "Beginner", duration: "~300h", rating: 4.8, url: "https://www.freecodecamp.org/learn", free: FREE },
+      { title: "Official Django Tutorial", provider: "Django Project", level: "Intermediate", duration: "Self-paced", rating: 4.8, url: "https://docs.djangoproject.com/en/stable/intro/tutorial01/", free: FREE },
     ],
     projects: ["Automation toolkit", "Django REST marketplace", "Data analysis notebook pack"],
     certifications: ["PCAP Python Associate", "Django / DRF portfolio"],
@@ -78,9 +82,9 @@ export const CAREER_FIELDS: CareerField[] = [
     avgSalary: "$85k – $145k",
     skills: ["Java", "Spring Boot", "SQL", "Microservices", "JUnit", "Kafka"],
     courses: [
-      { title: "Java Programming Masterclass", provider: "Udemy", level: "Beginner", duration: "80h", rating: 4.6, url: "https://www.udemy.com/course/java-the-complete-java-developer-course/" },
-      { title: "Spring Framework Specialization", provider: "Coursera", level: "Intermediate", duration: "4 months", rating: 4.6, url: "https://www.coursera.org/learn/spring-framework" },
-      { title: "Data Structures in Java", provider: "Coursera", level: "Intermediate", duration: "6 weeks", rating: 4.7, url: "https://www.coursera.org/specializations/data-structures-algorithms" },
+      { title: "Java Programming (Parts I & II)", provider: "University of Helsinki MOOC", level: "Beginner", duration: "Self-paced", rating: 4.9, url: "https://java-programming.mooc.fi/", free: FREE },
+      { title: "Spring Official Guides", provider: "Spring.io", level: "Intermediate", duration: "Self-paced", rating: 4.8, url: "https://spring.io/guides", free: FREE },
+      { title: "Java Algorithms & Data Structures", provider: "freeCodeCamp", level: "Intermediate", duration: "Self-paced", rating: 4.7, url: "https://www.freecodecamp.org/learn", free: FREE },
     ],
     projects: ["Banking REST API (Spring)", "Inventory microservices", "Android expense tracker"],
     certifications: ["Oracle Certified Associate: Java", "Spring Certified Professional"],
@@ -94,9 +98,9 @@ export const CAREER_FIELDS: CareerField[] = [
     avgSalary: "$90k – $155k",
     skills: ["C", "C++", "Memory Management", "STL", "Multithreading", "CMake"],
     courses: [
-      { title: "C++ Nanodegree Foundations", provider: "Udacity", level: "Beginner", duration: "4 months", rating: 4.6, url: "https://www.udacity.com/course/c-plus-plus-nanodegree--nd213" },
-      { title: "Beginning C++ Programming", provider: "Udemy", level: "Beginner", duration: "40h", rating: 4.6, url: "https://www.udemy.com/course/beginning-c-plus-plus-programming/" },
-      { title: "Embedded Systems (UT Austin)", provider: "edX", level: "Intermediate", duration: "Self-paced", rating: 4.7, url: "https://www.edx.org/learn/embedded-systems" },
+      { title: "LearnCpp.com – Complete C++ Tutorial", provider: "LearnCpp", level: "Beginner", duration: "Self-paced", rating: 4.9, url: "https://www.learncpp.com/", free: FREE },
+      { title: "C Programming Tutorial", provider: "Learn-C.org", level: "Beginner", duration: "Self-paced", rating: 4.7, url: "https://www.learn-c.org/", free: FREE },
+      { title: "C++ Full Course Videos", provider: "freeCodeCamp", level: "Beginner", duration: "Self-paced", rating: 4.7, url: "https://www.freecodecamp.org/learn", free: FREE },
     ],
     projects: ["Custom shell", "Game engine renderer (OpenGL)", "Embedded sensor firmware"],
     certifications: ["CPA C++ Associate", "ARM Embedded certifications"],
@@ -110,9 +114,9 @@ export const CAREER_FIELDS: CareerField[] = [
     avgSalary: "$110k – $190k",
     skills: ["Python", "Math/Stats", "PyTorch", "Scikit-learn", "MLOps", "Evaluation"],
     courses: [
-      { title: "Machine Learning Specialization", provider: "Coursera (DeepLearning.AI)", level: "Beginner", duration: "3 months", rating: 4.9, url: "https://www.coursera.org/specializations/machine-learning-introduction" },
-      { title: "Deep Learning Specialization", provider: "Coursera", level: "Intermediate", duration: "4 months", rating: 4.9, url: "https://www.coursera.org/specializations/deep-learning" },
-      { title: "MLOps Specialization", provider: "Coursera", level: "Advanced", duration: "3 months", rating: 4.7, url: "https://www.coursera.org/specializations/mlops-duke" },
+      { title: "Machine Learning Crash Course", provider: "Google", level: "Beginner", duration: "~15h", rating: 4.8, url: "https://developers.google.com/machine-learning/crash-course", free: FREE },
+      { title: "Practical Deep Learning", provider: "fast.ai", level: "Intermediate", duration: "Self-paced", rating: 4.9, url: "https://course.fast.ai/", free: FREE },
+      { title: "Intro to Machine Learning", provider: "Kaggle Learn", level: "Beginner", duration: "~4h", rating: 4.8, url: "https://www.kaggle.com/learn", free: FREE },
     ],
     projects: ["Churn prediction + API", "Image classifier with monitoring", "RAG chatbot with evals"],
     certifications: ["AWS ML Specialty", "TensorFlow Developer Certificate"],
@@ -126,9 +130,9 @@ export const CAREER_FIELDS: CareerField[] = [
     avgSalary: "$120k – $200k",
     skills: ["Prompt Engineering", "RAG", "Vector DBs", "Agents", "Evals", "Fine-tuning"],
     courses: [
-      { title: "Generative AI with LLMs", provider: "Coursera (AWS + DeepLearning.AI)", level: "Intermediate", duration: "3 months", rating: 4.8, url: "https://www.coursera.org/learn/generative-ai-with-llms" },
-      { title: "LangChain for LLM App Dev", provider: "DeepLearning.AI", level: "Intermediate", duration: "Short course", rating: 4.8, url: "https://www.deeplearning.ai/short-courses/" },
-      { title: "RAG + Agents cookbook", provider: "OpenAI Cookbook", level: "Intermediate", duration: "Self-paced", rating: 4.8, url: "https://cookbook.openai.com/" },
+      { title: "Short Courses on LLMs & Agents", provider: "DeepLearning.AI", level: "Intermediate", duration: "1–4h each", rating: 4.8, url: "https://www.deeplearning.ai/short-courses/", free: FREE },
+      { title: "OpenAI Cookbook (guides + code)", provider: "OpenAI", level: "Intermediate", duration: "Self-paced", rating: 4.8, url: "https://cookbook.openai.com/", free: FREE },
+      { title: "Hugging Face Free Courses", provider: "Hugging Face", level: "Beginner", duration: "Self-paced", rating: 4.8, url: "https://huggingface.co/learn", free: FREE },
     ],
     projects: ["Docs Q&A with RAG", "Support agent with tools", "Eval harness for prompts"],
     certifications: ["DeepLearning.AI GenAI certs", "Azure AI Engineer Associate"],
@@ -142,9 +146,9 @@ export const CAREER_FIELDS: CareerField[] = [
     avgSalary: "$100k – $170k",
     skills: ["Statistics", "Python/R", "SQL", "Visualization", "Experimentation", "ML"],
     courses: [
-      { title: "IBM Data Science Professional", provider: "Coursera", level: "Beginner", duration: "11 months", rating: 4.6, url: "https://www.coursera.org/professional-certificates/ibm-data-science" },
-      { title: "Data Scientist Nanodegree", provider: "Udacity", level: "Intermediate", duration: "4 months", rating: 4.6, url: "https://www.udacity.com/course/data-scientist-nanodegree--nd025" },
-      { title: "Kaggle Learn (free)", provider: "Kaggle", level: "Beginner", duration: "Self-paced", rating: 4.8, url: "https://www.kaggle.com/learn" },
+      { title: "Kaggle Learn Micro-Courses", provider: "Kaggle", level: "Beginner", duration: "Self-paced", rating: 4.8, url: "https://www.kaggle.com/learn", free: FREE },
+      { title: "Machine Learning with Python", provider: "freeCodeCamp", level: "Intermediate", duration: "~300h", rating: 4.8, url: "https://www.freecodecamp.org/learn", free: FREE },
+      { title: "Machine Learning Crash Course", provider: "Google", level: "Beginner", duration: "~15h", rating: 4.8, url: "https://developers.google.com/machine-learning/crash-course", free: FREE },
     ],
     projects: ["A/B test analysis", "Customer segmentation", "End-to-end ML case study"],
     certifications: ["IBM Data Science", "Google Data Analytics → Advanced"],
@@ -158,9 +162,9 @@ export const CAREER_FIELDS: CareerField[] = [
     avgSalary: "$70k – $120k",
     skills: ["SQL", "Excel/Sheets", "Power BI/Tableau", "Python", "Storytelling", "dbt"],
     courses: [
-      { title: "Google Data Analytics", provider: "Coursera", level: "Beginner", duration: "6 months", rating: 4.8, url: "https://www.coursera.org/professional-certificates/google-data-analytics" },
-      { title: "Microsoft Power BI Data Analyst", provider: "Coursera", level: "Beginner", duration: "5 months", rating: 4.7, url: "https://www.coursera.org/professional-certificates/microsoft-power-bi-data-analyst" },
-      { title: "Mode SQL Tutorial (free)", provider: "Mode", level: "Beginner", duration: "Self-paced", rating: 4.7, url: "https://mode.com/sql-tutorial/" },
+      { title: "Data Analysis with Python", provider: "freeCodeCamp", level: "Beginner", duration: "~300h", rating: 4.8, url: "https://www.freecodecamp.org/learn", free: FREE },
+      { title: "SQL Tutorial", provider: "Mode", level: "Beginner", duration: "Self-paced", rating: 4.7, url: "https://mode.com/sql-tutorial/", free: FREE },
+      { title: "Power BI Guided Learning", provider: "Microsoft Learn", level: "Beginner", duration: "Self-paced", rating: 4.7, url: "https://learn.microsoft.com/", free: FREE },
     ],
     projects: ["Sales KPI dashboard", "Cohort retention analysis", "SQL + dbt pipeline"],
     certifications: ["Google Data Analytics", "PL-300 Power BI Data Analyst"],
@@ -174,9 +178,9 @@ export const CAREER_FIELDS: CareerField[] = [
     avgSalary: "$100k – $170k",
     skills: ["Linux", "Networking", "IAM", "Containers", "IaC (Terraform)", "CI/CD"],
     courses: [
-      { title: "AWS Solutions Architect Associate", provider: "Coursera / ACG", level: "Beginner", duration: "3 months", rating: 4.8, url: "https://www.coursera.org/learn/aws-cloud-solutions-architect" },
-      { title: "AZ-104 Azure Administrator", provider: "Microsoft Learn", level: "Intermediate", duration: "Self-paced", rating: 4.7, url: "https://learn.microsoft.com/credentials/certifications/azure-administrator/" },
-      { title: "Terraform Associate", provider: "HashiCorp Learn", level: "Intermediate", duration: "Self-paced", rating: 4.7, url: "https://developer.hashicorp.com/terraform/tutorials" },
+      { title: "AWS Skill Builder (free tier)", provider: "AWS", level: "Beginner", duration: "Self-paced", rating: 4.7, url: "https://skillbuilder.aws/", free: FREE },
+      { title: "Azure Administrator Path", provider: "Microsoft Learn", level: "Intermediate", duration: "Self-paced", rating: 4.7, url: "https://learn.microsoft.com/", free: FREE },
+      { title: "Terraform Tutorials", provider: "HashiCorp Learn", level: "Intermediate", duration: "Self-paced", rating: 4.7, url: "https://developer.hashicorp.com/terraform/tutorials", free: FREE },
     ],
     projects: ["3-tier app on AWS", "Terraform multi-env setup", "Serverless image pipeline"],
     certifications: ["AWS SAA", "AZ-104", "CKA (if Kubernetes-heavy)"],
@@ -190,9 +194,9 @@ export const CAREER_FIELDS: CareerField[] = [
     avgSalary: "$105k – $175k",
     skills: ["Linux", "Docker", "Kubernetes", "CI/CD", "Monitoring", "Scripting"],
     courses: [
-      { title: "DevOps on AWS Specialization", provider: "Coursera", level: "Intermediate", duration: "4 months", rating: 4.7, url: "https://www.coursera.org/specializations/aws-devops" },
-      { title: "Certified Kubernetes Administrator", provider: "Linux Foundation", level: "Advanced", duration: "Self-paced", rating: 4.8, url: "https://training.linuxfoundation.org/certification/certified-kubernetes-administrator-cka/" },
-      { title: "GitHub Actions docs (free)", provider: "GitHub", level: "Beginner", duration: "Self-paced", rating: 4.8, url: "https://docs.github.com/actions" },
+      { title: "Free DevOps Courses", provider: "KodeKloud", level: "Beginner", duration: "Self-paced", rating: 4.7, url: "https://kodekloud.com/", free: FREE },
+      { title: "Kubernetes Official Tutorials", provider: "Kubernetes.io", level: "Intermediate", duration: "Self-paced", rating: 4.8, url: "https://kubernetes.io/docs/tutorials/", free: FREE },
+      { title: "GitHub Actions Docs", provider: "GitHub", level: "Beginner", duration: "Self-paced", rating: 4.8, url: "https://docs.github.com/actions", free: FREE },
     ],
     projects: ["GitOps K8s deployment", "Blue/green + canary pipeline", "SLO dashboards + alerts"],
     certifications: ["CKA", "AWS DevOps Engineer Pro"],
@@ -206,9 +210,9 @@ export const CAREER_FIELDS: CareerField[] = [
     avgSalary: "$95k – $170k",
     skills: ["Networking", "Linux", "Security+", "SIEM", "Pentesting", "Cloud Sec"],
     courses: [
-      { title: "Google Cybersecurity Professional", provider: "Coursera", level: "Beginner", duration: "6 months", rating: 4.8, url: "https://www.coursera.org/professional-certificates/google-cybersecurity" },
-      { title: "CompTIA Security+ (SY0-701)", provider: "CompTIA", level: "Beginner", duration: "Self-paced", rating: 4.7, url: "https://www.comptia.org/certifications/security" },
-      { title: "TryHackMe Jr Pentester (free tier)", provider: "TryHackMe", level: "Beginner", duration: "Self-paced", rating: 4.8, url: "https://tryhackme.com/" },
+      { title: "Hands-on Hacking Labs (free tier)", provider: "TryHackMe", level: "Beginner", duration: "Self-paced", rating: 4.8, url: "https://tryhackme.com/", free: FREE },
+      { title: "Cybersecurity Free Courses", provider: "Cisco Skills for All", level: "Beginner", duration: "Self-paced", rating: 4.7, url: "https://skillsforall.com/", free: FREE },
+      { title: "Security+ Free Video Course", provider: "Professor Messer", level: "Beginner", duration: "Self-paced", rating: 4.8, url: "https://www.professormesser.com/", free: FREE },
     ],
     projects: ["Home SOC lab (Wazuh)", "Web vuln write-ups", "Cloud hardening baseline"],
     certifications: ["Security+", "SC-100 / CISSP path"],
@@ -222,9 +226,9 @@ export const CAREER_FIELDS: CareerField[] = [
     avgSalary: "$75k – $130k",
     skills: ["TCP/IP", "DNS/DHCP", "Routing/Switching", "Wireshark", "VPNs", "Cloud VPC"],
     courses: [
-      { title: "CCNA 200-301", provider: "Cisco Skills", level: "Beginner", duration: "3-6 months", rating: 4.8, url: "https://www.cisco.com/site/US/en/learn/training-certifications/certifications/enterprise/ccna/index.html" },
-      { title: "Network+ N10", provider: "CompTIA", level: "Beginner", duration: "Self-paced", rating: 4.6, url: "https://www.comptia.org/certifications/network" },
-      { title: "Practical Networking (free)", provider: "YouTube / Labs", level: "Beginner", duration: "Self-paced", rating: 4.7, url: "https://www.youtube.com/results?search_query=practical+networking" },
+      { title: "Networking Free Courses", provider: "Cisco Skills for All", level: "Beginner", duration: "Self-paced", rating: 4.7, url: "https://skillsforall.com/", free: FREE },
+      { title: "Network+ Free Video Course", provider: "Professor Messer", level: "Beginner", duration: "Self-paced", rating: 4.7, url: "https://www.professormesser.com/", free: FREE },
+      { title: "Wireshark Documentation & Labs", provider: "Wireshark", level: "Beginner", duration: "Self-paced", rating: 4.7, url: "https://www.wireshark.org/docs/", free: FREE },
     ],
     projects: ["GNS3 enterprise topology", "Wireshark analysis pack", "Hybrid cloud VPC design"],
     certifications: ["CCNA", "Network+"],
@@ -238,9 +242,9 @@ export const CAREER_FIELDS: CareerField[] = [
     avgSalary: "$85k – $145k",
     skills: ["SQL", "Modeling", "Indexing", "Postgres", "MongoDB", "Redis"],
     courses: [
-      { title: "SQL for Data Science", provider: "Coursera", level: "Beginner", duration: "4 weeks", rating: 4.7, url: "https://www.coursera.org/learn/sql-for-data-science" },
-      { title: "PostgreSQL Bootcamp", provider: "Udemy", level: "Beginner", duration: "20h", rating: 4.6, url: "https://www.udemy.com/course/sql-and-postgresql/" },
-      { title: "MongoDB University (free)", provider: "MongoDB", level: "Beginner", duration: "Self-paced", rating: 4.7, url: "https://university.mongodb.com/" },
+      { title: "PostgreSQL Tutorial (official)", provider: "PostgreSQL", level: "Beginner", duration: "Self-paced", rating: 4.7, url: "https://www.postgresql.org/docs/current/tutorial.html", free: FREE },
+      { title: "Interactive SQL Lessons", provider: "SQLBolt", level: "Beginner", duration: "Self-paced", rating: 4.7, url: "https://sqlbolt.com/", free: FREE },
+      { title: "MongoDB University", provider: "MongoDB", level: "Beginner", duration: "Self-paced", rating: 4.7, url: "https://university.mongodb.com/", free: FREE },
     ],
     projects: ["Normalized e-commerce schema", "Slow-query tuning report", "CDC pipeline demo"],
     certifications: ["Oracle SQL Associate", "MongoDB Associate"],
@@ -254,9 +258,9 @@ export const CAREER_FIELDS: CareerField[] = [
     avgSalary: "$70k – $125k",
     skills: ["Figma", "Research", "Wireframing", "Design Systems", "Prototyping", "Usability"],
     courses: [
-      { title: "Google UX Design Professional", provider: "Coursera", level: "Beginner", duration: "6 months", rating: 4.8, url: "https://www.coursera.org/professional-certificates/google-ux-design" },
-      { title: "Designlab UX Academy Foundations", provider: "Designlab", level: "Beginner", duration: "4 weeks", rating: 4.6, url: "https://designlab.com/" },
-      { title: "Refactoring UI (book)", provider: "Refactoring UI", level: "Intermediate", duration: "Self-paced", rating: 4.9, url: "https://www.refactoringui.com/" },
+      { title: "Free Design Lessons", provider: "Hack Design", level: "Beginner", duration: "Self-paced", rating: 4.7, url: "https://hackdesign.org/", free: FREE },
+      { title: "Laws of UX (design principles)", provider: "Laws of UX", level: "Beginner", duration: "Self-paced", rating: 4.8, url: "https://lawsofux.com/", free: FREE },
+      { title: "Figma Help & Tutorials", provider: "Figma", level: "Beginner", duration: "Self-paced", rating: 4.7, url: "https://help.figma.com/", free: FREE },
     ],
     projects: ["End-to-end case study x3", "Design system in Figma", "Usability test report"],
     certifications: ["Google UX Design", "NN/g UX Certification path"],
@@ -270,9 +274,9 @@ export const CAREER_FIELDS: CareerField[] = [
     avgSalary: "$85k – $150k",
     skills: ["Kotlin/Swift", "Flutter/React Native", "REST", "State Mgmt", "Push/Store", "Testing"],
     courses: [
-      { title: "Flutter & Dart Bootcamp", provider: "Udemy", level: "Beginner", duration: "30h", rating: 4.6, url: "https://www.udemy.com/course/flutter-bootcamp-with-dart/" },
-      { title: "Android Basics with Compose", provider: "Google Developers", level: "Beginner", duration: "Self-paced", rating: 4.7, url: "https://developer.android.com/courses" },
-      { title: "React Native docs path", provider: "Meta", level: "Intermediate", duration: "Self-paced", rating: 4.6, url: "https://reactnative.dev/docs/tutorial" },
+      { title: "Flutter Codelabs", provider: "Flutter (Google)", level: "Beginner", duration: "Self-paced", rating: 4.7, url: "https://docs.flutter.dev/codelabs", free: FREE },
+      { title: "Android Basics with Compose", provider: "Google Developers", level: "Beginner", duration: "Self-paced", rating: 4.7, url: "https://developer.android.com/courses", free: FREE },
+      { title: "React Native Tutorial", provider: "Meta", level: "Intermediate", duration: "Self-paced", rating: 4.6, url: "https://reactnative.dev/docs/tutorial", free: FREE },
     ],
     projects: ["Habit tracker app", "Chat + offline sync app", "Published store app"],
     certifications: ["Google Associate Android Dev", "Flutter portfolio + store links"],
@@ -286,9 +290,9 @@ export const CAREER_FIELDS: CareerField[] = [
     avgSalary: "$80k – $150k",
     skills: ["DSA", "OS", "DBMS", "Computer Networks", "OOP", "Aptitude"],
     courses: [
-      { title: "CS50x (Harvard, free)", provider: "edX", level: "Beginner", duration: "12 weeks", rating: 4.9, url: "https://cs50.harvard.edu/x/" },
-      { title: "NeetCode 150 (free)", provider: "NeetCode", level: "Intermediate", duration: "Self-paced", rating: 4.9, url: "https://neetcode.io/" },
-      { title: "GATE / Placement OS+DBMS playlists", provider: "YouTube", level: "Beginner", duration: "Self-paced", rating: 4.7, url: "https://www.youtube.com/results?search_query=gate+cse+os+dbms" },
+      { title: "CS50x – Intro to Computer Science", provider: "Harvard", level: "Beginner", duration: "12 weeks", rating: 4.9, url: "https://cs50.harvard.edu/x/", free: FREE },
+      { title: "NeetCode 150 DSA Practice", provider: "NeetCode", level: "Intermediate", duration: "Self-paced", rating: 4.9, url: "https://neetcode.io/", free: FREE },
+      { title: "DSA Tutorial", provider: "GeeksforGeeks", level: "Beginner", duration: "Self-paced", rating: 4.7, url: "https://www.geeksforgeeks.org/", free: FREE },
     ],
     projects: ["DSA patterns repo", "Mini OS shell", "DBMS mini project"],
     certifications: ["University grades + LeetCode profile", "Codeforces / Hackathons"],
@@ -302,9 +306,9 @@ export const CAREER_FIELDS: CareerField[] = [
     avgSalary: "$65k – $120k",
     skills: ["Math/Physics", "CAD", "MATLAB/Python", "Embedded", "Control Systems", "Documentation"],
     courses: [
-      { title: "Engineering Mechanics", provider: "Coursera", level: "Beginner", duration: "8 weeks", rating: 4.6, url: "https://www.coursera.org/learn/engineering-mechanics-statics" },
-      { title: "MATLAB Onramp (free)", provider: "MathWorks", level: "Beginner", duration: "2h", rating: 4.7, url: "https://matlabacademy.mathworks.com/" },
-      { title: "Modern Robotics Specialization", provider: "Coursera", level: "Intermediate", duration: "4 months", rating: 4.8, url: "https://www.coursera.org/specializations/modernrobotics" },
+      { title: "Free Engineering Courses (NPTEL)", provider: "NPTEL / SWAYAM", level: "Beginner", duration: "8–12 weeks", rating: 4.7, url: "https://nptel.ac.in/", free: FREE },
+      { title: "MATLAB Onramp", provider: "MathWorks", level: "Beginner", duration: "2h", rating: 4.7, url: "https://matlabacademy.mathworks.com/", free: FREE },
+      { title: "Arduino Documentation & Tutorials", provider: "Arduino", level: "Beginner", duration: "Self-paced", rating: 4.7, url: "https://docs.arduino.cc/", free: FREE },
     ],
     projects: ["CAD assembly + simulation", "Arduino robot", "Data-logging rig"],
     certifications: ["SolidWorks CSWA", "University + internship proof"],
@@ -318,9 +322,9 @@ export const CAREER_FIELDS: CareerField[] = [
     avgSalary: "$70k – $140k",
     skills: ["Strategy", "Analytics", "Product", "Finance Basics", "Leadership", "Communication"],
     courses: [
-      { title: "Google Project Management", provider: "Coursera", level: "Beginner", duration: "6 months", rating: 4.8, url: "https://www.coursera.org/professional-certificates/google-project-management" },
-      { title: "Wharton Business Foundations", provider: "Coursera", level: "Beginner", duration: "5 months", rating: 4.7, url: "https://www.coursera.org/specializations/wharton-business-foundations" },
-      { title: "Product Management (Reforge samples)", provider: "Reforge", level: "Intermediate", duration: "Self-paced", rating: 4.6, url: "https://www.reforge.com/" },
+      { title: "PMI Kickoff (project basics)", provider: "PMI", level: "Beginner", duration: "~4h", rating: 4.6, url: "https://www.pmi.org/kickoff", free: FREE },
+      { title: "HP LIFE Business Courses", provider: "HP Foundation", level: "Beginner", duration: "Self-paced", rating: 4.6, url: "https://www.life-global.org/", free: FREE },
+      { title: "Free Business & Management Courses", provider: "Saylor Academy", level: "Beginner", duration: "Self-paced", rating: 4.6, url: "https://www.saylor.org/", free: FREE },
     ],
     projects: ["Business case teardown", "Go-to-market plan", "Ops dashboard"],
     certifications: ["CAPM / PMP path", "Google Project Management"],
@@ -334,9 +338,9 @@ export const CAREER_FIELDS: CareerField[] = [
     avgSalary: "$75k – $150k",
     skills: ["Excel", "Accounting", "Valuation", "SQL", "Risk", "Reporting"],
     courses: [
-      { title: "Finance & Quantitative Modeling (Wharton)", provider: "Coursera", level: "Beginner", duration: "6 months", rating: 4.7, url: "https://www.coursera.org/specializations/wharton-quantitative-modeling" },
-      { title: "CFA Investment Foundations", provider: "CFA Institute", level: "Beginner", duration: "Self-paced", rating: 4.6, url: "https://www.cfainstitute.org/en/membership/professional-development/refresher-readings" },
-      { title: "Corporate Finance (NYU free)", provider: "NYU Stern", level: "Intermediate", duration: "Self-paced", rating: 4.8, url: "https://pages.stern.nyu.edu/~adamodar/" },
+      { title: "Varsity – Stock Markets & Finance", provider: "Zerodha", level: "Beginner", duration: "Self-paced", rating: 4.8, url: "https://zerodha.com/varsity/", free: FREE },
+      { title: "Corporate Finance Lectures", provider: "NYU Stern (Damodaran)", level: "Intermediate", duration: "Self-paced", rating: 4.8, url: "https://pages.stern.nyu.edu/~adamodar/", free: FREE },
+      { title: "Finance & Capital Markets", provider: "Khan Academy", level: "Beginner", duration: "Self-paced", rating: 4.7, url: "https://www.khanacademy.org/", free: FREE },
     ],
     projects: ["DCF model", "Portfolio backtest", "Budgeting dashboard"],
     certifications: ["CFA path", "FMVA (CFI)"],
@@ -350,9 +354,9 @@ export const CAREER_FIELDS: CareerField[] = [
     avgSalary: "$60k – $120k",
     skills: ["SEO", "Content", "Google Ads", "Social", "Email", "Analytics"],
     courses: [
-      { title: "Google Digital Marketing & E-commerce", provider: "Coursera", level: "Beginner", duration: "6 months", rating: 4.8, url: "https://www.coursera.org/professional-certificates/google-digital-marketing-ecommerce" },
-      { title: "HubSpot Content Marketing (free)", provider: "HubSpot", level: "Beginner", duration: "6h", rating: 4.7, url: "https://academy.hubspot.com/" },
-      { title: "Meta Social Media Marketing", provider: "Coursera", level: "Beginner", duration: "5 months", rating: 4.7, url: "https://www.coursera.org/professional-certificates/facebook-social-media-marketing" },
+      { title: "Content Marketing Certification", provider: "HubSpot Academy", level: "Beginner", duration: "~6h", rating: 4.7, url: "https://academy.hubspot.com/", free: FREE },
+      { title: "Google Skillshop (Ads & Analytics)", provider: "Google", level: "Beginner", duration: "Self-paced", rating: 4.7, url: "https://skillshop.withgoogle.com/", free: FREE },
+      { title: "Semrush Academy (SEO & Content)", provider: "Semrush", level: "Beginner", duration: "Self-paced", rating: 4.6, url: "https://www.semrush.com/academy/", free: FREE },
     ],
     projects: ["SEO audit + fix", "Ad campaign case", "Content calendar + newsletter"],
     certifications: ["Google Ads", "HubSpot"],
@@ -366,9 +370,9 @@ export const CAREER_FIELDS: CareerField[] = [
     avgSalary: "$60k – $115k",
     skills: ["Figma", "Typography", "Color", "Branding", "Illustrator", "Motion"],
     courses: [
-      { title: "CalArts Graphic Design (free audit)", provider: "Coursera", level: "Beginner", duration: "4 months", rating: 4.7, url: "https://www.coursera.org/specializations/graphic-design" },
-      { title: "Figma UI Design Essentials", provider: "Udemy", level: "Beginner", duration: "10h", rating: 4.6, url: "https://www.udemy.com/course/figma-ui-ux-design-essentials/" },
-      { title: "Canva Design School (free)", provider: "Canva", level: "Beginner", duration: "Self-paced", rating: 4.6, url: "https://designschool.canva.com/" },
+      { title: "Canva Design School", provider: "Canva", level: "Beginner", duration: "Self-paced", rating: 4.6, url: "https://designschool.canva.com/", free: FREE },
+      { title: "Free Graphic Design Diplomas", provider: "Alison", level: "Beginner", duration: "Self-paced", rating: 4.5, url: "https://alison.com/", free: FREE },
+      { title: "Free Design Tutorials", provider: "GCFGlobal", level: "Beginner", duration: "Self-paced", rating: 4.6, url: "https://edu.gcfglobal.org/", free: FREE },
     ],
     projects: ["Brand kit", "Landing page UI pack", "Motion intro"],
     certifications: ["Adobe Certified", "Portfolio + Dribbble"],
@@ -382,9 +386,9 @@ export const CAREER_FIELDS: CareerField[] = [
     avgSalary: "$70k – $130k",
     skills: ["Biology Basics", "Health Data", "HIPAA", "SQL", "EHR", "Research"],
     courses: [
-      { title: "AI for Medicine", provider: "Coursera", level: "Intermediate", duration: "4 months", rating: 4.8, url: "https://www.coursera.org/specializations/ai-for-medicine" },
-      { title: "Health Informatics (JHU)", provider: "Coursera", level: "Beginner", duration: "4 months", rating: 4.6, url: "https://www.coursera.org/specializations/health-informatics" },
-      { title: "Biostatistics (free)", provider: "Coursera", level: "Beginner", duration: "4 weeks", rating: 4.6, url: "https://www.coursera.org/learn/biostatistics" },
+      { title: "OpenWHO Health Courses", provider: "World Health Organization", level: "Beginner", duration: "Self-paced", rating: 4.6, url: "https://openwho.org/", free: FREE },
+      { title: "Health & Medicine", provider: "Khan Academy", level: "Beginner", duration: "Self-paced", rating: 4.7, url: "https://www.khanacademy.org/", free: FREE },
+      { title: "Public Health OpenCourseWare", provider: "Johns Hopkins", level: "Beginner", duration: "Self-paced", rating: 4.6, url: "https://ocw.jhsph.edu/", free: FREE },
     ],
     projects: ["De-identified EHR dashboard", "Symptom triage prototype", "Clinical trial analysis"],
     certifications: ["CAHIMS", "HIPAA + research ethics"],

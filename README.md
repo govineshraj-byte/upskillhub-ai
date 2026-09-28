@@ -8,15 +8,23 @@ Premium navy theme. Real AI backend (no mocks). Deploy-ready zip for Vercel.
 - **Resume Analyzer** (`/resume-analyzer`): upload PDF/DOCX → server parses (pdf-parse + mammoth) → AI returns score /100, skills, education, experience, projects, certs, keywords, strengths, weaknesses, improvements, missing skills, courses. POST `/api/analyze-resume`.
 - **Job Match** (`/job-match`): company + role + live JD + resume text → match score /100, matching/missing skills, missing keywords, courses, projects, fixes. POST `/api/match-job`. Nothing hardcoded.
 - **Roadmap** (`/roadmap`): Career → Skills → Courses → Projects → Certifications → Resume → Interview → Job. POST `/api/roadmap`.
-- **Courses** (`/courses`): 22 career fields with skills, real course links, projects, certifications. Search + filter.
+- **Courses** (`/courses`): 22 career fields with skills, 100% free course links, projects, certifications. Search + filter + deep links (`/courses?field=python`).
 
 ## Environment (required for AI)
-Copy `.env.example` → `.env.local` locally, or set in Vercel dashboard:
+Copy `.env.example` → `.env.local` locally, or set in Vercel dashboard.
 
+**Free path (Gemini, recommended):** get a key at aistudio.google.com, then set:
+```
+OPENAI_API_KEY=<your Gemini key>
+OPENAI_BASE_URL=https://generativelanguage.googleapis.com/v1beta/openai
+OPENAI_MODEL=gemini-3.8-flash   # or whatever current Flash model AI Studio lists
+```
+
+**Paid path (OpenAI):**
 ```
 OPENAI_API_KEY=sk-...
 OPENAI_MODEL=gpt-4o-mini
-OPENAI_BASE_URL=https://api.openai.com/v1
+# OPENAI_BASE_URL defaults to https://api.openai.com/v1
 ```
 
 Without the key, APIs return HTTP 503 with a clear message (never fake scores). Works with any OpenAI-compatible endpoint (OpenAI, Azure OpenAI, OpenRouter via BASE_URL + MODEL).
